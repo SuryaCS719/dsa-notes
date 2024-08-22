@@ -1,0 +1,139 @@
+{
+  "main": {
+    "id": "69d35e7c817e7725",
+    "type": "split",
+    "children": [
+      {
+        "id": "d97607a4c7348e27",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "2e0c7f8b65ecf842",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "c_Palindrome Linked List.md",
+                "mode": "preview",
+                "source": false
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "81fe4a0d22c3f4cd",
+    "type": "mobile-drawer",
+    "children": [
+      {
+        "id": "bbfa523f81d7c1fc",
+        "type": "leaf",
+        "state": {
+          "type": "file-explorer",
+          "state": {
+            "sortOrder": "alphabetical"
+          }
+        }
+      },
+      {
+        "id": "e3c89943f93d4411",
+        "type": "leaf",
+        "state": {
+          "type": "search",
+          "state": {
+            "query": "",
+            "matchingCase": false,
+            "explainSearch": false,
+            "collapseAll": false,
+            "extraContext": false,
+            "sortOrder": "alphabetical"
+          }
+        }
+      },
+      {
+        "id": "6e0d368e3fa1d647",
+        "type": "leaf",
+        "state": {
+          "type": "tag",
+          "state": {
+            "sortOrder": "frequency",
+            "useHierarchy": true
+          }
+        }
+      },
+      {
+        "id": "2923b8edd8012bec",
+        "type": "leaf",
+        "state": {
+          "type": "bookmarks",
+          "state": {}
+        }
+      }
+    ],
+    "currentTab": 0
+  },
+  "right": {
+    "id": "264682ec9943e0ca",
+    "type": "mobile-drawer",
+    "children": [
+      {
+        "id": "81d1074be1ad1ba8",
+        "type": "leaf",
+        "state": {
+          "type": "backlink",
+          "state": {
+            "file": "c_Palindrome Linked List.md",
+            "collapseAll": false,
+            "extraContext": false,
+            "sortOrder": "alphabetical",
+            "showSearch": false,
+            "searchQuery": "",
+            "backlinkCollapsed": false,
+            "unlinkedCollapsed": true
+          }
+        }
+      },
+      {
+        "id": "216d1bf1ab9c33f1",
+        "type": "leaf",
+        "state": {
+          "type": "outgoing-link",
+          "state": {
+            "file": "c_Palindrome Linked List.md",
+            "linksCollapsed": false,
+            "unlinkedCollapsed": true
+          }
+        }
+      },
+      {
+        "id": "4b3da0c0c60ca709",
+        "type": "leaf",
+        "state": {
+          "type": "outline",
+          "state": {
+            "file": "c_Palindrome Linked List.md"
+          }
+        }
+      }
+    ],
+    "currentTab": 0
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "2e0c7f8b65ecf842",
+  "lastOpenFiles": [
+    "a_Reverse a Linked List.md",
+    "b_Middle of the Linked List.md"
+  ]
+}
