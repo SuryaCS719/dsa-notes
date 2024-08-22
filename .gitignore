@@ -1,0 +1,11 @@
+# Ignore Mac system files
+.DS_Store
+
+# Ignore Obsidian vault files
+.obsidian/
+
+# Ignore any log files
+*.log
+
+# Ignore backup files
+*~
