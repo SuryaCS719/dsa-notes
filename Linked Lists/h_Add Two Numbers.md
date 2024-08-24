@@ -28,7 +28,6 @@ You may assume the two numbers do not contain any leading zero, except the numbe
 - `0 <= Node.val <= 9`
 - It is guaranteed that the list represents a number that does not have leading zeros.
 
-
 ## **Logic:**
 
 - The concept is similar to adding 1 in LL (previous question).
@@ -38,8 +37,6 @@ You may assume the two numbers do not contain any leading zero, except the numbe
 	- This can be interpreted as 342 + 465 = 807. (This is only interpretation, this is NOT how we process or print the output).
 - ex: [9, 9, 9] + [9, 9, 9] = [8, 9, 9, 1]. This is correct.
 - ex: [9, 9, 9] + [9, 9, 9] = [1, 9, 9, 8]. This is WRONG.
-- ex: [9, 9, 9] + [9, 9, 9] = [1, 9, 9, 8].<span style="color: red;"> This is WRONG.</span>
-
 
 **Psuedocode:**
 
