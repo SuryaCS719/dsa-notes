@@ -96,12 +96,7 @@ class Solution {
 
 3. Sort LL and :
 ```cpp
-            else{
-                vis[curr->data] = true;
-                prev = curr;
-                curr = curr->next;
-            }
-        }
+
 ```
 
 ### **Complexity Analysis:**
