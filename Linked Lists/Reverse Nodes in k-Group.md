@@ -145,7 +145,7 @@ public:
             ListNode* kthNode = getKthNode(temp, k);
 
             if(kthNode == NULL){
-                /* if there's a previous group, link to the the remaining group                  elements, which has a len/size that is less than k. */
+                /* if there's a previous group, link to the the remaining group elements, which has a len/size that is less than k. */
                 if(prevLast) prevLast->next = temp; 
                 break; // the LL length is smaller than k so exit the loop.
             }
