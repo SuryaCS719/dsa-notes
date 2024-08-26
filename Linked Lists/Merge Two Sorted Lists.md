@@ -32,7 +32,25 @@ Return _the head of the merged linked list_.
 
 ## **Logic:**
 
-- 
+1. **Bruteforce approach:**
+	- 3 Step process:
+		1. push list 1 and list 2 node's data into an array.
+		2. sort the array.
+		3. convert the array back to LL
+		
+2. **Optimal approach:**
+### Intuition
+
+A more efficient approach involves merging the given sorted linked lists directly without the need for an intermediate array. By taking advantage of the fact that the linked lists are already sorted, we can use a simple comparison strategy.
+
+Position a pointer each at the beginning of both lists. Compare the current values at these pointers and choose the smaller value to add to the new merged list. Move the pointer forward in the list from which the smaller value was taken. Repeat this process until one of the lists is fully merged. At this point, attach the remaining nodes of the other list to the merged list, as they are already in order.
+
+### Approach
+
+- Set up two pointers at the start of each input linked list. Create a dummy node to serve as the anchor for the beginning of the merged list and use a separate traversal pointer to build the combined list.
+- While both lists have remaining nodes, compare their current values. Attach the smaller value to the merged list and advance the traversal pointer, along with the pointer from the list from which the smaller value was taken.
+- When one of the lists is fully traversed, directly attach the remaining nodes from the other list to the merged list, as they are already in sorted order.
+- The merged list starts after the dummy node. Return the next node of the dummy node as the head of the newly merged and sorted linked list.
 
 
 ## **Code:**
@@ -77,7 +95,7 @@ public:
 };
 ```
 
-2. 
+2. Optimal:
 ```cpp
 class Solution {
 public:
@@ -117,8 +135,11 @@ public:
 ### **Complexity Analysis:**
 
 ***Time Complexity:***
-- O(min(n, m)) where n and m are lengths of the given sorted LL.
-- **Time Complexity: O(N1+N2)** where N1 is the number of nodes in the first linked list and N1 in the second linked list as we traverse both linked lists in a single pass for merging without any additional loops or nested iterations.
+1. Bruteforce: **O(N1 + N2) + O(N log N) + O(N)** where N1 is the number of linked list nodes in the first list, N2 is the number of linked list nodes in the second list, and N is the total number of nodes (N1 + N2). Traversing both lists into the array takes O(N1 + N2), sorting the array takes O((N1 + N2) X log(N1 + N2)), and then traversing the sorted array and creating a list gives us another O(N1 + N2).
+
+2. **O(N1 + N2)** because both lists are traversed in a single pass for merging without any additional loops or nested iterations. Here N1 is the number of nodes in the first linked list and N2 is the number of nodes in the second linked list.
 
 ***Space Complexity:***
-- O(1)
+1. Bruteforce: **O(N) + O(N)** where N is the total number of nodes from both lists (N1 + N2). O(N) to store all the nodes of both the lists in an external array and another O(N) to create a new combined list.
+
+2. Optimal: O(1)
