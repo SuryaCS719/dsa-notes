@@ -91,6 +91,8 @@ public:
     ListNode* findMiddleNode(ListNode* head){
         ListNode* slow = head;
         ListNode* fast = head;
+        
+        // Edge case Note:
         // in even length LL, we need 1st midNode, instead of 2nd midNode
         // so we adjust tortoise algo accordingly.
         
