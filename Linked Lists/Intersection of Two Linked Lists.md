@@ -71,11 +71,10 @@ Explanation: The two lists do not intersect, so return null.
 	- Now, iterative on the other Linked List, and while doing so, check whether the current_node_of_LL exists in the visited map. If it exists then return it. 
 	- Continue iterating till the end of the LL. If no common node is found then return NULL.
 
-2. Optimal:
+2. Better approach:
 ### Intuition
 
 To find the intersection of two linked lists, we use the difference in their lengths to align their starting points and then traverse both lists simultaneously until we find the intersection node.
-
 ### Approach
 
 To optimize the search for the intersection node, we align the starting points of the two linked lists based on their lengths. Here's the process:
@@ -85,13 +84,26 @@ To optimize the search for the intersection node, we align the starting points o
 3. Advance the pointer of the longer list by this difference, thereby aligning both lists to the same remaining length.
 4. Traverse both lists simultaneously from these aligned points. The first node where the pointers meet is the intersection node.
 ### Dry Run
+
 ![](https://static.takeuforward.org/premium/Linked-List/FAQs%20Medium/Find%20the%20intersection%20point%20of%20Y%20LL/1.png-u9wDGzEA)
 
 ![](https://static.takeuforward.org/premium/Linked-List/FAQs%20Medium/Find%20the%20intersection%20point%20of%20Y%20LL/2.png-h4i9jWHn)
 ![](https://static.takeuforward.org/premium/Linked-List/FAQs%20Medium/Find%20the%20intersection%20point%20of%20Y%20LL/3.png-BoXeQ41N)
 ![](https://static.takeuforward.org/premium/Linked-List/FAQs%20Medium/Find%20the%20intersection%20point%20of%20Y%20LL/4.png-r6I2maQQ)
 
+3. Optimal:
 
+	The difference of length method requires various steps to work on it. Using the same concept of difference of length, a different approach can be implemented. The process is as follows:-
+	
+	- Take two dummy nodes for each list. Point each to the head of the lists.
+	- Iterate over them. If anyone becomes null, point them to the head of the opposite lists and continue iterating until they collide.
+
+	Why this works? Why does the two dummy pointers align after traversing some steps.
+	 - d1 is always 'd' steps behind d2 so when d2 reaches NULL, we point them to opposite heads so that the d1 can compensate for 'd' steps and thus we can align both the pointers.
+
+**Dry** **Run**:
+
+**![](https://lh3.googleusercontent.com/lQGGtwWBXL3Kvl15qC71jpZwvbokF4h963ahFBTd1fAathQjnPSbpxWbCaXv8c3OjJSaWJRot_Ug9WL85_SEPy9ShJxNNCLUFHTWsjS6pQKWGbGoK4Jhpe4Ebgr4VfbCWfOQ0uHC)**
 
 
 ## **Code:**
@@ -118,7 +130,7 @@ public:
 };
 ```
 
-2. Optimal
+2. Better:
 ```cpp
 class Solution {
 public:
@@ -158,12 +170,37 @@ public:
     }
 };
 ```
+
+3. Optimal:
+```cpp
+class Solution {
+public:
+    ListNode *getIntersectionNode(ListNode *headA, ListNode *headB) {
+        if(headA == nullptr || headB == nullptr) return nullptr;
+        
+        ListNode* pointerA = headA;
+        ListNode* pointerB = headB;
+        
+        // Traverse both lists
+        while(pointerA != pointerB) {
+            // Move to the next node or switch to the other list
+            pointerA = (pointerA == nullptr) ? headB : pointerA->next;
+            pointerB = (pointerB == nullptr) ? headA : pointerB->next;
+        }
+        
+        return pointerA; // Either the intersection node or nullptr if no intersection
+    }
+};
+
+```
 ### **Complexity Analysis:**
 
 ***Time Complexity:***
 1. Bruteforce: O(max(L1, L2))
-2. Optimal: **O(2 x max(length of list1, length of list2))** This is because the algorithm traverses each linked list entirely, ensuring that both pointers traverse the entire length of both lists. The maximum number of steps required is twice the length of the longer list, accounting for the difference in their lengths.
+2. Better: **O(2 x max(length of list1, length of list2))** This is because the algorithm traverses each linked list entirely, ensuring that both pointers traverse the entire length of both lists. The maximum number of steps required is twice the length of the longer list, accounting for the difference in their lengths.
+3. Optimal: O(N + M), Each pointer (`pointerA` and `pointerB`) traverses each list exactly once. In the worst case, each pointer will traverse all nodes in both lists. This happens when the two lists do not intersect and each pointer ends up traversing both lists completely. So, in total, both pointers combined will traverse N + M nodes before they either find the intersection or both become `nullptr`.
 
 ***Space Complexity:***
 1. Bruteforce: O(L1) 
-2. Optimal: O(1)
+2. Better: O(1)
+3. Optimal: O(1)
